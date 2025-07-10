@@ -1,1 +1,616 @@
-1
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق كوكب مزار | تسجيل الدخول</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #6a5acd;
+            --secondary: #9370db;
+            --accent: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f9f9f9;
+            --success: #4caf50;
+            --warning: #ff9800;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .app-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .app-title {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .app-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .login-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            max-width: 900px;
+            margin: 0 auto;
+            min-height: 500px;
+        }
+        
+        .welcome-section {
+            flex: 1;
+            background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .welcome-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 350px;
+        }
+        
+        .app-features {
+            text-align: right;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .feature i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .form-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .form-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2);
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5949c9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106, 90, 205, 0.4);
+        }
+        
+        .btn-google {
+            background: #fff;
+            color: #757575;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-google:hover {
+            background: #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-google i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+            color: #4285F4;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            position: relative;
+            color: #777;
+        }
+        
+        .divider::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 42%;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 42%;
+            height: 1px;
+            background: #ddd;
+        }
+        
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        /* Popup Styles */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .popup-container.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        
+        .popup-container.active .popup {
+            transform: translateY(0);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close-btn:hover {
+            color: var(--accent);
+        }
+        
+        .popup-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-card {
+                flex-direction: column;
+            }
+            
+            .welcome-section {
+                padding: 30px 20px;
+            }
+            
+            .form-section {
+                padding: 30px 20px;
+            }
+            
+            .app-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">كوكب مزار</h1>
+            <p class="app-subtitle">تطبيق الدردشة الاجتماعي الذي يجمع الناس من جميع أنحاء العالم في مكان واحد للتواصل وتبادل الأفكار</p>
+        </header>
+        
+        <div class="login-card">
+            <div class="welcome-section">
+                <h2>مرحباً بك مجدداً!</h2>
+                <p>سجل الدخول إلى حسابك للاستمرار في رحلتك عبر عالم الدردشة المثير</p>
+                
+                <div class="app-features">
+                    <div class="feature">
+                        <span>دردشة مباشرة مع الأصدقاء</span>
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="feature">
+                        <span>مجموعات حسب الاهتمامات</span>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature">
+                        <span>مشاركة الوسائط المتعددة</span>
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="feature">
+                        <span>أمان وحماية عالية</span>
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2 class="form-title">تسجيل الدخول</h2>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" placeholder="ادخل بريدك الإلكتروني" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">كلمة المرور</label>
+                        <input type="password" id="password" class="form-control" placeholder="ادخل كلمة المرور" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                </form>
+                
+                <div class="divider">أو</div>
+                
+                <button id="googleLogin" class="btn btn-google">
+                    <span>تسجيل الدخول باستخدام جوجل</span>
+                    <i class="fab fa-google"></i>
+                </button>
+                
+                <div class="links">
+                    <a href="#" class="link" id="showSignup">إنشاء حساب جديد</a>
+                    <a href="#" class="link" id="showReset">نسيت كلمة المرور؟</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 تطبيق كوكب مزار. جميع الحقوق محفوظة.</p>
+        </div>
+    </div>
+    
+    <!-- Signup Popup -->
+    <div class="popup-container" id="signupPopup">
+        <div class="popup">
+            <button class="close-btn" id="closeSignup">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="popup-title">إنشاء حساب جديد</h2>
+            
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">الاسم الكامل</label>
+                    <input type="text" id="signupName" class="form-control" placeholder="ادخل اسمك الكامل" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">البريد الإلكتروني</label>
+                    <input type="email" id="signupEmail" class="form-control" placeholder="ادخل بريدك الإلكتروني" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">كلمة المرور</label>
+                    <input type="password" id="signupPassword" class="form-control" placeholder="اختر كلمة مرور قوية" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupConfirmPassword">تأكيد كلمة المرور</label>
+                    <input type="password" id="signupConfirmPassword" class="form-control" placeholder="أعد إدخال كلمة المرور" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">إنشاء حساب</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Reset Password Popup -->
+    <div class="popup-container" id="resetPopup">
+        <div class="popup">
+            <button class="close-btn" id="closeReset">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="popup-title">إعادة تعيين كلمة المرور</h2>
+            
+            <form id="resetForm">
+                <div class="form-group">
+                    <label for="resetEmail">البريد الإلكتروني</label>
+                    <input type="email" id="resetEmail" class="form-control" placeholder="ادخل بريدك الإلكتروني" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="resetCode">كود التحقق (سيتم إرساله)</label>
+                    <input type="text" id="resetCode" class="form-control" placeholder="ادخل كود التحقق">
+                </div>
+                
+                <div class="form-group">
+                    <label for="newPassword">كلمة المرور الجديدة</label>
+                    <input type="password" id="newPassword" class="form-control" placeholder="اختر كلمة مرور جديدة">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">إعادة تعيين كلمة المرور</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBbwKLg6_hAADjH4itOD9qDwAQEoJMBOds",
+            authDomain: "gram-e6f72.firebaseapp.com",
+            databaseURL: "https://gram-e6f72-default-rtdb.firebaseio.com",
+            projectId: "gram-e6f72",
+            storageBucket: "gram-e6f72.appspot.com",
+            messagingSenderId: "426955075285",
+            appId: "1:426955075285:web:ee07a5b56cd9b38da2fc5c",
+            measurementId: "G-3F6BV361SJ"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        
+        // DOM Elements
+        const signupPopup = document.getElementById('signupPopup');
+        const resetPopup = document.getElementById('resetPopup');
+        const showSignup = document.getElementById('showSignup');
+        const showReset = document.getElementById('showReset');
+        const closeSignup = document.getElementById('closeSignup');
+        const closeReset = document.getElementById('closeReset');
+        
+        // Show Signup Popup
+        showSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupPopup.classList.add('active');
+        });
+        
+        // Show Reset Popup
+        showReset.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetPopup.classList.add('active');
+        });
+        
+        // Close Popups
+        closeSignup.addEventListener('click', () => {
+            signupPopup.classList.remove('active');
+        });
+        
+        closeReset.addEventListener('click', () => {
+            resetPopup.classList.remove('active');
+        });
+        
+        // Close popups when clicking outside
+        [signupPopup, resetPopup].forEach(popup => {
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.classList.remove('active');
+                }
+            });
+        });
+        
+        // Form Submissions
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Firebase login
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    alert(`مرحباً ${user.email}! تم تسجيل الدخول بنجاح.`);
+                    // Redirect to chat page in real app
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(`خطأ في تسجيل الدخول: ${errorMessage}`);
+                });
+        });
+        
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert("كلمة المرور وتأكيدها غير متطابقين!");
+                return;
+            }
+            
+            // Firebase signup
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed up
+                    const user = userCredential.user;
+                    alert(`تم إنشاء حساب ${user.email} بنجاح!`);
+                    signupPopup.classList.remove('active');
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(`خطأ في إنشاء الحساب: ${errorMessage}`);
+                });
+        });
+        
+        document.getElementById('resetForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('resetEmail').value;
+            
+            // Firebase password reset
+            auth.sendPasswordResetEmail(email)
+                .then(() => {
+                    alert(`تم إرسال رابط إعادة تعيين كلمة المرور إلى ${email}`);
+                    resetPopup.classList.remove('active');
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(`خطأ في إرسال رابط إعادة التعيين: ${errorMessage}`);
+                });
+        });
+        
+        // Google Sign-In
+        document.getElementById('googleLogin').addEventListener('click', () => {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            
+            auth.signInWithPopup(provider)
+                .then((result) => {
+                    // Signed in
+                    const user = result.user;
+                    alert(`تم تسجيل الدخول باستخدام جوجل: ${user.displayName}`);
+                    // Redirect to chat page in real app
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(`خطأ في تسجيل الدخول باستخدام جوجل: ${errorMessage}`);
+                });
+        });
+        
+        // Listen for auth state changes
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log("User is signed in:", user);
+            } else {
+                console.log("User is signed out");
+            }
+        });
+    </script>
+</body>
+</html>

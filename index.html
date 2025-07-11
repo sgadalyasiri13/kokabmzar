@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق كوكب مزار | تسجيل الدخول</title>
+    <title>كوكب مزار | تطبيق الدردشة الآمنة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -21,11 +21,18 @@
             --light: #f9f9f9;
             --success: #4caf50;
             --warning: #ff9800;
-            --space: #1a237e;
+            --ocean-blue: #3a86ff;
+            --sky-blue: #4cc9f0;
+            --coral: #ff6b6b;
+            --navy: #14213d;
+            --teal: #38b000;
+            --lilac: #a78bfa;
+            --indigo: #6366f1;
+            --deep-blue: #1e3a8a;
         }
         
         body {
-            background: linear-gradient(135deg, var(--space), var(--primary));
+            background: linear-gradient(135deg, var(--deep-blue), var(--ocean-blue));
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -49,7 +56,7 @@
         .app-logo {
             width: 120px;
             height: 120px;
-            background: linear-gradient(135deg, #4a00e0, #8e2de2);
+            background: linear-gradient(135deg, var(--indigo), var(--lilac));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -76,6 +83,10 @@
             margin-bottom: 10px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.2);
             letter-spacing: 1px;
+            background: linear-gradient(to right, var(--lilac), var(--sky-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .app-subtitle {
@@ -95,11 +106,12 @@
             max-width: 900px;
             margin: 0 auto;
             min-height: 500px;
+            background: linear-gradient(to bottom, #ffffff, #f0f4ff);
         }
         
         .welcome-section {
             flex: 1;
-            background: linear-gradient(to bottom right, var(--space), var(--primary));
+            background: linear-gradient(to bottom right, var(--indigo), var(--lilac));
             color: white;
             padding: 40px;
             display: flex;
@@ -171,8 +183,12 @@
         .form-title {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: var(--dark);
+            color: var(--navy);
             text-align: center;
+            background: linear-gradient(to right, var(--indigo), var(--ocean-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .form-group {
@@ -184,21 +200,23 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+            color: var(--navy);
         }
         
         .form-control {
             width: 100%;
             padding: 14px 50px 14px 20px;
-            border: 2px solid #e1e1e1;
+            border: 2px solid #d1d5db;
             border-radius: 12px;
             font-size: 1rem;
             transition: all 0.3s;
+            background: #f8fafc;
         }
         
         .form-control:focus {
-            border-color: var(--primary);
+            border-color: var(--indigo);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
         
         .password-toggle {
@@ -226,20 +244,20 @@
         }
         
         .btn-primary {
-            background: var(--primary);
+            background: linear-gradient(to right, var(--indigo), var(--lilac));
             color: white;
         }
         
         .btn-primary:hover {
-            background: #5949c9;
+            background: linear-gradient(to right, #4f46e5, #8b5cf6);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(106, 90, 205, 0.4);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
         }
         
         .btn-google {
             background: #fff;
             color: #757575;
-            border: 1px solid #ddd;
+            border: 1px solid #d1d5db;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -250,10 +268,18 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .btn-google i {
-            margin-left: 10px;
-            font-size: 1.2rem;
-            color: #4285F4;
+        .btn-guest {
+            background: linear-gradient(to right, var(--coral), #f97316);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-guest:hover {
+            background: linear-gradient(to right, #ef4444, #ea580c);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
         }
         
         .divider {
@@ -270,7 +296,7 @@
             right: 0;
             width: 42%;
             height: 1px;
-            background: #ddd;
+            background: #d1d5db;
         }
         
         .divider::after {
@@ -280,7 +306,7 @@
             left: 0;
             width: 42%;
             height: 1px;
-            background: #ddd;
+            background: #d1d5db;
         }
         
         .links {
@@ -290,14 +316,14 @@
         }
         
         .link {
-            color: var(--primary);
+            color: var(--indigo);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
         }
         
         .link:hover {
-            color: var(--secondary);
+            color: var(--lilac);
             text-decoration: underline;
         }
         
@@ -332,6 +358,7 @@
             position: relative;
             transform: translateY(20px);
             transition: transform 0.3s;
+            background: linear-gradient(to bottom, #ffffff, #f0f4ff);
         }
         
         .popup-container.active .popup {
@@ -351,14 +378,18 @@
         }
         
         .close-btn:hover {
-            color: var(--accent);
+            color: var(--coral);
         }
         
         .popup-title {
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-align: center;
-            color: var(--dark);
+            color: var(--navy);
+            background: linear-gradient(to right, var(--indigo), var(--lilac));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         /* Notification */
@@ -387,19 +418,27 @@
         }
         
         .notification.success {
-            border-left: 5px solid var(--success);
+            border-left: 5px solid var(--teal);
         }
         
         .notification.success i {
-            color: var(--success);
+            color: var(--teal);
         }
         
         .notification.error {
-            border-left: 5px solid var(--accent);
+            border-left: 5px solid var(--coral);
         }
         
         .notification.error i {
-            color: var(--accent);
+            color: var(--coral);
+        }
+        
+        .notification.warning {
+            border-left: 5px solid var(--warning);
+        }
+        
+        .notification.warning i {
+            color: var(--warning);
         }
         
         /* Footer */
@@ -432,6 +471,44 @@
                 width: 100px;
                 height: 100px;
             }
+            
+            .divider::before,
+            .divider::after {
+                width: 40%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .app-subtitle {
+                font-size: 1rem;
+            }
+            
+            .form-title {
+                font-size: 1.7rem;
+            }
+            
+            .popup {
+                padding: 30px 20px;
+            }
+            
+            .popup-title {
+                font-size: 1.5rem;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .divider::before,
+            .divider::after {
+                width: 35%;
+            }
         }
         
         /* Chat page styles */
@@ -445,10 +522,11 @@
             overflow: hidden;
             box-shadow: 0 15px 50px rgba(0,0,0,0.2);
             min-height: 80vh;
+            background: linear-gradient(to bottom, #ffffff, #f0f4ff);
         }
         
         .chat-header {
-            background: var(--space);
+            background: linear-gradient(to right, var(--indigo), var(--lilac));
             color: white;
             padding: 20px;
             text-align: center;
@@ -477,8 +555,9 @@
         .sidebar {
             width: 30%;
             background: #f5f7fb;
-            border-right: 1px solid #eee;
+            border-right: 1px solid #e5e7eb;
             overflow-y: auto;
+            padding: 15px;
         }
         
         .chat-main {
@@ -491,19 +570,27 @@
             flex: 1;
             padding: 20px;
             overflow-y: auto;
-            background: #f9f9f9;
+            background: var(--chat-bg);
+            display: flex;
+            flex-direction: column;
         }
         
         .message {
-            max-width: 70%;
+            max-width: 80%;
             padding: 12px 16px;
             margin-bottom: 15px;
             border-radius: 18px;
             position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .message.sent {
-            background: var(--primary);
+            background: var(--indigo);
             color: white;
             margin-left: auto;
             border-bottom-right-radius: 5px;
@@ -516,39 +603,238 @@
             border-bottom-left-radius: 5px;
         }
         
+        .message-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        .message-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .message-action {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .message-action:hover {
+            opacity: 1;
+        }
+        
         .message-input {
             display: flex;
             padding: 15px;
             background: white;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #e5e7eb;
         }
         
         .message-input input {
             flex: 1;
             padding: 12px 20px;
-            border: 2px solid #e1e1e1;
+            border: 2px solid #d1d5db;
             border-radius: 25px;
             font-size: 1rem;
+            background: #f8fafc;
         }
         
         .message-input button {
             margin-right: 10px;
-            background: var(--primary);
+            background: var(--indigo);
             color: white;
             border: none;
             width: 45px;
             height: 45px;
             border-radius: 50%;
             cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .message-input button:hover {
+            background: var(--lilac);
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #d1d5db;
+            color: var(--navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .online-count {
+            background: var(--indigo);
+            color: white;
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 0.9rem;
+        }
+        
+        .user-list {
+            list-style: none;
+        }
+        
+        .user-item {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .user-item:hover {
+            background: #e9ecef;
+        }
+        
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--indigo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .user-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--navy);
+        }
+        
+        .user-status {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--teal);
+        }
+        
+        /* Welcome banner */
+        .welcome-banner {
+            background: linear-gradient(to right, var(--indigo), var(--lilac));
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Verification section */
+        .verification-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .verification-icon {
+            font-size: 3rem;
+            color: var(--indigo);
+            margin-bottom: 20px;
+        }
+        
+        .verification-inputs {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .verification-input {
+            width: 50px;
+            height: 60px;
+            text-align: center;
+            font-size: 1.5rem;
+            border: 2px solid #d1d5db;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+        
+        .verification-input:focus {
+            border-color: var(--indigo);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        
+        .resend-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timer {
+            font-size: 1rem;
+            color: var(--indigo);
+            font-weight: 600;
+        }
+        
+        /* Blocked message */
+        .blocked-message {
+            background: #ffe5e5;
+            color: #d32f2f;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid var(--indigo);
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
     <div class="container" id="loginContainer">
         <header class="app-header">
-            <div class="app-logo"></div>
+            <div class="app-logo pulse"></div>
             <h1 class="app-title">كوكب مزار</h1>
-            <p class="app-subtitle">تطبيق الدردشة الذي يربطك بالعالم، حيث يمكنك التواصل مع أصدقائك ومشاركة أفكارك في بيئة تفاعلية</p>
+            <p class="app-subtitle">منصة الدردشة الآمنة مع نظام متكامل للحماية والتحقق من البريد الإلكتروني</p>
         </header>
         
         <div class="login-card">
@@ -558,20 +844,20 @@
                 
                 <div class="app-features">
                     <div class="feature">
-                        <span>دردشة مباشرة مع الأصدقاء</span>
+                        <span>نظام تحقق من البريد الإلكتروني</span>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="feature">
+                        <span>دردشة مباشرة في الوقت الحقيقي</span>
                         <i class="fas fa-comments"></i>
                     </div>
                     <div class="feature">
-                        <span>مجموعات حسب الاهتمامات</span>
+                        <span>عرض الأعضاء المتصلين فقط</span>
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="feature">
-                        <span>مشاركة الوسائط المتعددة</span>
-                        <i class="fas fa-images"></i>
-                    </div>
-                    <div class="feature">
-                        <span>أمان وحماية عالية</span>
-                        <i class="fas fa-shield-alt"></i>
+                        <span>تصميم عصري وجذاب</span>
+                        <i class="fas fa-palette"></i>
                     </div>
                 </div>
             </div>
@@ -593,7 +879,8 @@
                         </button>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                    <button type="submit" class="btn btn-primary" id="loginBtn">تسجيل الدخول</button>
+                    <div class="spinner" id="loginSpinner" style="display: none;"></div>
                 </form>
                 
                 <div class="divider">أو</div>
@@ -601,6 +888,11 @@
                 <button id="googleLogin" class="btn btn-google">
                     <span>تسجيل الدخول باستخدام جوجل</span>
                     <i class="fab fa-google"></i>
+                </button>
+                
+                <button id="guestLogin" class="btn btn-guest" style="margin-top: 15px;">
+                    <span>الدخول كضيف</span>
+                    <i class="fas fa-user-clock"></i>
                 </button>
                 
                 <div class="links">
@@ -626,7 +918,16 @@
         
         <div class="chat-container">
             <div class="sidebar">
-                <!-- Sidebar content would go here -->
+                <div class="welcome-banner">
+                    <i class="fas fa-shield-alt"></i> نظام الحماية نشط - بيئة آمنة
+                </div>
+                <h3 class="sidebar-title">
+                    الأعضاء المتصلون
+                    <span class="online-count" id="onlineCount">0 متصل</span>
+                </h3>
+                <ul class="user-list" id="userList">
+                    <!-- Users will be populated here -->
+                </ul>
             </div>
             <div class="chat-main">
                 <div class="messages-container" id="messagesContainer">
@@ -675,8 +976,44 @@
                     </button>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">إنشاء حساب</button>
+                <button type="submit" class="btn btn-primary" id="signupBtn">إنشاء حساب</button>
+                <div class="spinner" id="signupSpinner" style="display: none;"></div>
             </form>
+        </div>
+    </div>
+    
+    <!-- Verification Popup -->
+    <div class="popup-container" id="verificationPopup">
+        <div class="popup">
+            <button class="close-btn" id="closeVerification">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="popup-title">تأكيد البريد الإلكتروني</h2>
+            
+            <div class="verification-section">
+                <div class="verification-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <p>لقد أرسلنا رمز التحقق إلى بريدك الإلكتروني</p>
+                <p>الرجاء إدخال الرمز المكون من 6 أرقام الذي تلقيته</p>
+                
+                <div class="verification-inputs">
+                    <input type="text" class="verification-input" maxlength="1" data-index="1">
+                    <input type="text" class="verification-input" maxlength="1" data-index="2">
+                    <input type="text" class="verification-input" maxlength="1" data-index="3">
+                    <input type="text" class="verification-input" maxlength="1" data-index="4">
+                    <input type="text" class="verification-input" maxlength="1" data-index="5">
+                    <input type="text" class="verification-input" maxlength="1" data-index="6">
+                </div>
+                
+                <div class="resend-container">
+                    <span class="timer" id="resendTimer">01:00</span>
+                    <button id="resendCode" class="btn" disabled>إعادة إرسال الرمز</button>
+                </div>
+                
+                <button id="verifyCode" class="btn btn-primary" style="margin-top: 20px;">تحقق من الرمز</button>
+                <div class="spinner" id="verifySpinner" style="display: none;"></div>
+            </div>
         </div>
     </div>
     
@@ -695,17 +1032,13 @@
                         <input type="email" id="resetEmail" class="form-control" placeholder="ادخل بريدك الإلكتروني" required>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">إرسال رابط التعيين</button>
+                    <button type="submit" class="btn btn-primary" id="resetBtn">إرسال رابط التعيين</button>
+                    <div class="spinner" id="resetSpinner" style="display: none;"></div>
                 </form>
             </div>
             
             <div id="resetStep2" style="display: none;">
                 <form id="resetCompleteForm">
-                    <div class="form-group">
-                        <label for="resetCode">كود التحقق</label>
-                        <input type="text" id="resetCode" class="form-control" placeholder="ادخل كود التحقق" required>
-                    </div>
-                    
                     <div class="form-group">
                         <label for="newPassword">كلمة المرور الجديدة</label>
                         <input type="password" id="newPassword" class="form-control" placeholder="اختر كلمة مرور جديدة" required>
@@ -722,7 +1055,8 @@
                         </button>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">تحديث كلمة المرور</button>
+                    <button type="submit" class="btn btn-primary" id="updatePasswordBtn">تحديث كلمة المرور</button>
+                    <div class="spinner" id="updateSpinner" style="display: none;"></div>
                 </form>
             </div>
         </div>
@@ -737,7 +1071,6 @@
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-    
     <script>
         // Firebase configuration
         const firebaseConfig = {
@@ -758,22 +1091,16 @@
         // DOM Elements
         const signupPopup = document.getElementById('signupPopup');
         const resetPopup = document.getElementById('resetPopup');
+        const verificationPopup = document.getElementById('verificationPopup');
         const showSignup = document.getElementById('showSignup');
         const showReset = document.getElementById('showReset');
         const closeSignup = document.getElementById('closeSignup');
         const closeReset = document.getElementById('closeReset');
+        const closeVerification = document.getElementById('closeVerification');
         const resetStep1 = document.getElementById('resetStep1');
         const resetStep2 = document.getElementById('resetStep2');
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('password');
-        const toggleSignupPassword = document.getElementById('toggleSignupPassword');
-        const signupPassword = document.getElementById('signupPassword');
-        const toggleSignupConfirmPassword = document.getElementById('toggleSignupConfirmPassword');
-        const signupConfirmPassword = document.getElementById('signupConfirmPassword');
-        const toggleNewPassword = document.getElementById('toggleNewPassword');
-        const newPassword = document.getElementById('newPassword');
-        const toggleConfirmNewPassword = document.getElementById('toggleConfirmNewPassword');
-        const confirmNewPassword = document.getElementById('confirmNewPassword');
         const notification = document.getElementById('notification');
         const notificationText = document.getElementById('notificationText');
         const loginContainer = document.getElementById('loginContainer');
@@ -782,6 +1109,40 @@
         const messagesContainer = document.getElementById('messagesContainer');
         const messageInput = document.getElementById('messageInput');
         const sendMessage = document.getElementById('sendMessage');
+        const guestLogin = document.getElementById('guestLogin');
+        const userList = document.getElementById('userList');
+        const onlineCount = document.getElementById('onlineCount');
+        const verifyCodeBtn = document.getElementById('verifyCode');
+        const resendCodeBtn = document.getElementById('resendCode');
+        const resendTimer = document.getElementById('resendTimer');
+        const verificationInputs = document.querySelectorAll('.verification-input');
+        
+        // Spinners
+        const loginSpinner = document.getElementById('loginSpinner');
+        const signupSpinner = document.getElementById('signupSpinner');
+        const resetSpinner = document.getElementById('resetSpinner');
+        const updateSpinner = document.getElementById('updateSpinner');
+        const verifySpinner = document.getElementById('verifySpinner');
+        
+        // Buttons
+        const loginBtn = document.getElementById('loginBtn');
+        const signupBtn = document.getElementById('signupBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const updatePasswordBtn = document.getElementById('updatePasswordBtn');
+        
+        // User management
+        let currentUser = null;
+        let verificationCode = '';
+        let verificationEmail = '';
+        let countdownInterval = null;
+        let secondsLeft = 60;
+
+        // Initialize online users for demo
+        const onlineUsers = {
+            'user1': { id: 'user1', name: 'أحمد محمد' },
+            'user2': { id: 'user2', name: 'سارة عبدالله' },
+            'user3': { id: 'user3', name: 'خالد حسن' }
+        };
         
         // Show Signup Popup
         showSignup.addEventListener('click', (e) => {
@@ -802,20 +1163,32 @@
         
         closeReset.addEventListener('click', () => {
             resetPopup.classList.remove('active');
-            // Reset the reset form
             resetStep1.style.display = 'block';
             resetStep2.style.display = 'none';
             document.getElementById('resetEmail').value = '';
-            document.getElementById('resetCode').value = '';
             document.getElementById('newPassword').value = '';
             document.getElementById('confirmNewPassword').value = '';
         });
         
+        closeVerification.addEventListener('click', () => {
+            verificationPopup.classList.remove('active');
+            clearInterval(countdownInterval);
+            resendCodeBtn.disabled = true;
+            secondsLeft = 60;
+            updateTimerDisplay();
+        });
+        
         // Close popups when clicking outside
-        [signupPopup, resetPopup].forEach(popup => {
+        [signupPopup, resetPopup, verificationPopup].forEach(popup => {
             popup.addEventListener('click', (e) => {
                 if (e.target === popup) {
                     popup.classList.remove('active');
+                    if (popup === verificationPopup) {
+                        clearInterval(countdownInterval);
+                        resendCodeBtn.disabled = true;
+                        secondsLeft = 60;
+                        updateTimerDisplay();
+                    }
                 }
             });
         });
@@ -831,22 +1204,6 @@
             togglePasswordVisibility(passwordInput, togglePassword);
         });
         
-        toggleSignupPassword.addEventListener('click', () => {
-            togglePasswordVisibility(signupPassword, toggleSignupPassword);
-        });
-        
-        toggleSignupConfirmPassword.addEventListener('click', () => {
-            togglePasswordVisibility(signupConfirmPassword, toggleSignupConfirmPassword);
-        });
-        
-        toggleNewPassword.addEventListener('click', () => {
-            togglePasswordVisibility(newPassword, toggleNewPassword);
-        });
-        
-        toggleConfirmNewPassword.addEventListener('click', () => {
-            togglePasswordVisibility(confirmNewPassword, toggleConfirmNewPassword);
-        });
-        
         // Show notification
         function showNotification(message, isSuccess = true) {
             notificationText.textContent = message;
@@ -859,18 +1216,200 @@
             }, 3000);
         }
         
+        // Show warning notification
+        function showWarning(message) {
+            notificationText.textContent = message;
+            notification.className = 'notification warning';
+            notification.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <span>${message}</span>`;
+            notification.classList.add('active');
+            
+            setTimeout(() => {
+                notification.classList.remove('active');
+            }, 3000);
+        }
+        
+        // Generate random verification code
+        function generateVerificationCode() {
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+        
+        // Start countdown timer
+        function startCountdown() {
+            clearInterval(countdownInterval);
+            secondsLeft = 60;
+            resendCodeBtn.disabled = true;
+            resendCodeBtn.style.background = '#e1e1e1';
+            updateTimerDisplay();
+            
+            countdownInterval = setInterval(() => {
+                secondsLeft--;
+                updateTimerDisplay();
+                
+                if (secondsLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    resendCodeBtn.disabled = false;
+                    resendCodeBtn.style.background = 'var(--indigo)';
+                    resendCodeBtn.style.color = 'white';
+                }
+            }, 1000);
+        }
+        
+        // Update timer display
+        function updateTimerDisplay() {
+            const minutes = Math.floor(secondsLeft / 60);
+            const seconds = secondsLeft % 60;
+            resendTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // Show verification popup
+        function showVerificationPopup(email) {
+            verificationEmail = email;
+            verificationCode = generateVerificationCode();
+            
+            // Clear inputs
+            verificationInputs.forEach(input => {
+                input.value = '';
+            });
+            
+            // Focus first input
+            verificationInputs[0].focus();
+            
+            // Start countdown
+            startCountdown();
+            
+            // Show popup
+            verificationPopup.classList.add('active');
+            signupPopup.classList.remove('active');
+            
+            // Show notification
+            showNotification(`تم إرسال رمز التحقق إلى ${email}. الرجاء التحقق من صندوق الوارد أو الرسائل غير المرغوب فيها.`);
+        }
+        
+        // Verify code
+        verifyCodeBtn.addEventListener('click', () => {
+            let enteredCode = '';
+            verificationInputs.forEach(input => {
+                enteredCode += input.value;
+            });
+            
+            if (enteredCode.length !== 6) {
+                showNotification("الرجاء إدخال رمز التحقق المكون من 6 أرقام.", false);
+                return;
+            }
+            
+            verifySpinner.style.display = 'block';
+            verifyCodeBtn.disabled = true;
+            
+            setTimeout(() => {
+                if (enteredCode === verificationCode) {
+                    showNotification("تم التحقق من بريدك الإلكتروني بنجاح! يمكنك الآن تسجيل الدخول.");
+                    setTimeout(() => {
+                        verificationPopup.classList.remove('active');
+                        clearInterval(countdownInterval);
+                    }, 1500);
+                } else {
+                    showNotification("رمز التحقق غير صحيح. الرجاء المحاولة مرة أخرى.", false);
+                }
+                
+                verifySpinner.style.display = 'none';
+                verifyCodeBtn.disabled = false;
+            }, 1500);
+        });
+        
+        // Resend code
+        resendCodeBtn.addEventListener('click', () => {
+            verificationCode = generateVerificationCode();
+            showNotification(`تم إرسال رمز تحقق جديد إلى ${verificationEmail}. الرجاء التحقق من صندوق الوارد.`);
+            startCountdown();
+        });
+        
+        // Handle verification input navigation
+        verificationInputs.forEach((input, index) => {
+            input.addEventListener('input', () => {
+                if (input.value.length === 1 && index < verificationInputs.length - 1) {
+                    verificationInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                    verificationInputs[index - 1].focus();
+                }
+            });
+        });
+        
         // Show chat page
-        function showChatPage(user) {
+        function showChatPage(user, isGuest = false) {
             loginContainer.style.display = 'none';
             chatPage.style.display = 'block';
             
-            // Add welcome message
-            messagesContainer.innerHTML = `
-                <div class="message received">
+            // Set current user
+            currentUser = {
+                id: user.uid || `guest-${Date.now()}`,
+                name: user.displayName || user.email || "زائر",
+                isGuest: isGuest
+            };
+            
+            // Clear messages
+            messagesContainer.innerHTML = '';
+            
+            // Add welcome message only if it's the first time
+            if (!sessionStorage.getItem('welcomed')) {
+                const welcomeMessage = document.createElement('div');
+                welcomeMessage.className = 'message received';
+                welcomeMessage.innerHTML = `
                     <strong>مرحباً بك في كوكب مزار!</strong><br>
-                    يمكنك البدء بالدردشة مع الأصدقاء في هذه الغرفة العامة.
+                    يسعدنا وجودك معنا في هذه الغرفة العامة. يمكنك البدء بالدردشة الآن.<br>
+                    <div class="message-info">
+                        <span>نظام الدردشة - ${new Date().toLocaleTimeString()}</span>
+                    </div>
+                `;
+                messagesContainer.appendChild(welcomeMessage);
+                
+                // Set flag in session storage
+                sessionStorage.setItem('welcomed', 'true');
+            }
+            
+            // If guest, show guest notification
+            if (isGuest) {
+                showNotification("أنت الآن تدخل كضيف. سيتم حذف جميع البيانات عند الخروج.", false);
+            }
+            
+            // Update online users
+            updateOnlineUsersList();
+        }
+        
+        // Update online users list
+        function updateOnlineUsersList() {
+            userList.innerHTML = '';
+            
+            // Add online users
+            for (const userId in onlineUsers) {
+                addUserToList(onlineUsers[userId]);
+            }
+            
+            onlineCount.textContent = `${Object.keys(onlineUsers).length} متصل`;
+        }
+        
+        // Add user to sidebar list
+        function addUserToList(user) {
+            const userItem = document.createElement('li');
+            userItem.className = 'user-item';
+            userItem.dataset.userId = user.id;
+            
+            // Get first letter of first name
+            const firstName = user.name.split(' ')[0];
+            const firstLetter = firstName.charAt(0);
+            
+            userItem.innerHTML = `
+                <div class="user-avatar">${firstLetter}</div>
+                <div class="user-name">
+                    ${user.name}
                 </div>
+                <div class="user-status"></div>
             `;
+            
+            userList.appendChild(userItem);
         }
         
         // Back to login from chat
@@ -878,7 +1417,9 @@
             e.preventDefault();
             chatPage.style.display = 'none';
             loginContainer.style.display = 'block';
-            auth.signOut();
+            sessionStorage.removeItem('welcomed');
+            sessionStorage.removeItem('firstMessageReplied');
+            currentUser = null;
         });
         
         // Send message
@@ -887,28 +1428,44 @@
             if (message) {
                 const messageElement = document.createElement('div');
                 messageElement.className = 'message sent';
-                messageElement.textContent = message;
+                
+                messageElement.innerHTML = `
+                    ${message}
+                    <div class="message-info">
+                        <span>أنت - ${new Date().toLocaleTimeString()}</span>
+                    </div>
+                `;
                 messagesContainer.appendChild(messageElement);
                 messageInput.value = '';
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
                 
-                // Simulate reply after 1 second
-                setTimeout(() => {
-                    const replies = [
-                        "مرحباً! كيف حالك اليوم؟",
-                        "أهلاً بك في كوكب مزار!",
-                        "هل تود التحدث عن شيء معين؟",
-                        "هذا التطبيق رائع، أليس كذلك؟",
-                        "شكراً على رسالتك!"
-                    ];
-                    const randomReply = replies[Math.floor(Math.random() * replies.length)];
-                    
-                    const replyElement = document.createElement('div');
-                    replyElement.className = 'message received';
-                    replyElement.textContent = randomReply;
-                    messagesContainer.appendChild(replyElement);
-                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-                }, 1000);
+                // Simulate reply after 1 second only if it's the first message
+                if (!sessionStorage.getItem('firstMessageReplied')) {
+                    setTimeout(() => {
+                        const replies = [
+                            "مرحباً! كيف حالك اليوم؟",
+                            "أهلاً بك في كوكب مزار!",
+                            "هل تود التحدث عن شيء معين؟",
+                            "هذا التطبيق رائع، أليس كذلك؟",
+                            "شكراً على رسالتك!"
+                        ];
+                        const randomReply = replies[Math.floor(Math.random() * replies.length)];
+                        
+                        const replyElement = document.createElement('div');
+                        replyElement.className = 'message received';
+                        replyElement.innerHTML = `
+                            <strong>بوت الدردشة:</strong> ${randomReply}
+                            <div class="message-info">
+                                <span>نظام الدردشة - ${new Date().toLocaleTimeString()}</span>
+                            </div>
+                        `;
+                        messagesContainer.appendChild(replyElement);
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                        
+                        // Set flag that first message has been replied to
+                        sessionStorage.setItem('firstMessageReplied', 'true');
+                    }, 1000);
+                }
             }
         });
         
@@ -925,6 +1482,10 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
+            // Show spinner and disable button
+            loginSpinner.style.display = 'block';
+            loginBtn.disabled = true;
+            
             // Firebase login
             auth.signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
@@ -936,11 +1497,16 @@
                 .catch((error) => {
                     const errorMessage = error.message;
                     showNotification(`خطأ في تسجيل الدخول: ${errorMessage}`, false);
+                })
+                .finally(() => {
+                    loginSpinner.style.display = 'none';
+                    loginBtn.disabled = false;
                 });
         });
         
         document.getElementById('signupForm').addEventListener('submit', (e) => {
             e.preventDefault();
+            const name = document.getElementById('signupName').value;
             const email = document.getElementById('signupEmail').value;
             const password = document.getElementById('signupPassword').value;
             const confirmPassword = document.getElementById('signupConfirmPassword').value;
@@ -950,17 +1516,29 @@
                 return;
             }
             
+            // Show spinner and disable button
+            signupSpinner.style.display = 'block';
+            signupBtn.disabled = true;
+            
             // Firebase signup
             auth.createUserWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     // Signed up
                     const user = userCredential.user;
-                    showNotification(`تم إنشاء حساب ${user.email} بنجاح!`);
-                    signupPopup.classList.remove('active');
+                    
+                    // Send verification email
+                    return user.sendEmailVerification();
+                })
+                .then(() => {
+                    showVerificationPopup(email);
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
                     showNotification(`خطأ في إنشاء الحساب: ${errorMessage}`, false);
+                })
+                .finally(() => {
+                    signupSpinner.style.display = 'none';
+                    signupBtn.disabled = false;
                 });
         });
         
@@ -968,22 +1546,29 @@
             e.preventDefault();
             const email = document.getElementById('resetEmail').value;
             
+            // Show spinner and disable button
+            resetSpinner.style.display = 'block';
+            resetBtn.disabled = true;
+            
             // Firebase password reset
             auth.sendPasswordResetEmail(email)
                 .then(() => {
-                    showNotification(`تم إرسال رابط إعادة تعيين كلمة المرور إلى ${email}`);
+                    showNotification(`تم إرسال رابط إعادة تعيين كلمة المرور إلى ${email}. الرجاء التحقق من صندوق الوارد.`);
                     resetStep1.style.display = 'none';
                     resetStep2.style.display = 'block';
                 })
                 .catch((error) => {
                     const errorMessage = error.message;
                     showNotification(`خطأ في إرسال رابط إعادة التعيين: ${errorMessage}`, false);
+                })
+                .finally(() => {
+                    resetSpinner.style.display = 'none';
+                    resetBtn.disabled = false;
                 });
         });
         
         document.getElementById('resetCompleteForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            const code = document.getElementById('resetCode').value;
             const newPasswordValue = document.getElementById('newPassword').value;
             const confirmPasswordValue = document.getElementById('confirmNewPassword').value;
             
@@ -992,19 +1577,25 @@
                 return;
             }
             
-            // In a real app, we would verify the code and reset password
-            // For demo purposes, we'll simulate success
-            showNotification("تم تحديث كلمة المرور بنجاح! يمكنك تسجيل الدخول الآن.");
+            // In a real app, we would update the password here
+            // For this demo, we'll simulate the process
+            updateSpinner.style.display = 'block';
+            updatePasswordBtn.disabled = true;
             
-            // Close the popup and reset forms
             setTimeout(() => {
-                resetPopup.classList.remove('active');
-                resetStep1.style.display = 'block';
-                resetStep2.style.display = 'none';
-                document.getElementById('resetEmail').value = '';
-                document.getElementById('resetCode').value = '';
-                document.getElementById('newPassword').value = '';
-                document.getElementById('confirmNewPassword').value = '';
+                showNotification("تم تحديث كلمة المرور بنجاح! يمكنك تسجيل الدخول الآن.");
+                updateSpinner.style.display = 'none';
+                updatePasswordBtn.disabled = false;
+                
+                // Close the popup
+                setTimeout(() => {
+                    resetPopup.classList.remove('active');
+                    resetStep1.style.display = 'block';
+                    resetStep2.style.display = 'none';
+                    document.getElementById('resetEmail').value = '';
+                    document.getElementById('newPassword').value = '';
+                    document.getElementById('confirmNewPassword').value = '';
+                }, 1500);
             }, 1500);
         });
         
@@ -1031,6 +1622,23 @@
                 });
         });
         
+        // Guest Login
+        guestLogin.addEventListener('click', () => {
+            // Generate random guest name
+            const guestNames = ['زائر محترم', 'ضيف كريم', 'زائر جديد', 'مستخدم مؤقت'];
+            const randomName = guestNames[Math.floor(Math.random() * guestNames.length)];
+            
+            // Show notification
+            showNotification(`مرحباً بك ${randomName}! أنت الآن تستخدم التطبيق كضيف.`, true);
+            
+            // Simulate guest login
+            setTimeout(() => {
+                showChatPage({ 
+                    displayName: randomName
+                }, true);
+            }, 1500);
+        });
+        
         // Listen for auth state changes
         auth.onAuthStateChanged(user => {
             if (user) {
@@ -1039,6 +1647,17 @@
                 console.log("User is signed out");
             }
         });
+        
+        // Initialize session storage flags
+        if (!sessionStorage.getItem('welcomed')) {
+            sessionStorage.setItem('welcomed', 'false');
+        }
+        if (!sessionStorage.getItem('firstMessageReplied')) {
+            sessionStorage.setItem('firstMessageReplied', 'false');
+        }
+        
+        // Initialize online users
+        updateOnlineUsersList();
     </script>
 </body>
 </html>
